@@ -1,0 +1,90 @@
+/* ===========================================================
+   Horizontal navigation bars
+============================================================== */
+
+/*
+  Create centered vertical header nav bar usng float.
+*/
+header {
+  text-align: center;
+}
+
+/* inline-block supresses element from taking the entire width of container */
+header nav {
+  display:inline-block;
+}
+
+header nav li {
+  float: left;
+  overflow: auto; /* always good to include overflow with float */
+}
+
+
+/*
+  Create centered vertical footer nav bar using inline-block.
+*/
+footer {
+  text-align: center;
+}
+
+/*
+  Because UL have a block display, want to put background color
+  on li elements
+*/
+footer nav ul {
+  background: #fff;
+}
+
+footer nav li {
+  background: #def1f9;
+  margin: -4px; /* remove space between line items */
+}
+
+footer nav li {
+  display: inline-block;
+}
+
+
+/* ===========================================================
+   CSS Floats
+============================================================== */
+
+/*
+  Float '.img-featured' so that content flows around its left side.
+  Apply a 15 pixel margin to the top, bottom and left sides.
+*/
+.img-featured {
+  float: right;
+  margin: 15px 0 15px 15px;
+}
+
+
+/*
+  Float '.img-article' so that content flows around its right side.
+  Apply a 20 pixel right margin.
+*/
+.img-article {
+  float: left;
+  margin-right: 20px;
+}
+
+
+/*
+  Float '.article-content' so that it's positioned next to '.img-article'
+  without wrapping around it.
+  Adjust the width of '.article-content' so that both elements are side by side.
+*/
+.article-content {
+  float: right;
+  width: 78%; /* narrow enough to sit next to image most of the time. */
+}
+
+
+/*
+   Helper group to handle collapsed floats' container
+*/
+.group::after {
+  content: '';
+  display: table;
+  clear: both;
+}
